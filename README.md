@@ -9,7 +9,7 @@
 
 
 
-## store-discovery-serer: https://github.com/Alishergit/store-discovery-server.git
+## store-discovery-server: https://github.com/Alishergit/store-discovery-server.git
 
 
 
