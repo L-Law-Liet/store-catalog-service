@@ -17,6 +17,7 @@ public class User {
     private String email;
     private UserRating userRating;
     private UserCart cartList;
+    private UserComment userComment;
 
 
 }

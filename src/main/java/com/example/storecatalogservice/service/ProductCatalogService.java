@@ -20,8 +20,8 @@ public class ProductCatalogService {
         List<Product> productList = new ArrayList<>();
 
 
-            Product product = restTemplate.getForObject("http://localhost:8081/products/" + productId, Product.class);
-            Rating rating = restTemplate.getForObject("http://localhost:8082/ratings/" + productId, Rating.class);
+            Product product = restTemplate.getForObject("http://store-information-service/products/" + productId, Product.class);
+            Rating rating = restTemplate.getForObject("http://store-rating-service/ratings/" + productId, Rating.class);
 
 
         return new Catalog(product.getTitle(), rating.getRating());
@@ -31,14 +31,18 @@ public class ProductCatalogService {
 
     public User getUserData(Long userId) {
 
-        UserRating ratings = restTemplate.getForObject("http://localhost:8082/ratings/users/" + userId, UserRating.class);
+        UserRating ratings = restTemplate.getForObject("http://store-rating-service/ratings/users/" + userId, UserRating.class);
 
-        User user = restTemplate.getForObject("http://localhost:8083/profile/" + userId, User.class);
+        User user = restTemplate.getForObject("http://store-profile-service/profile/" + userId, User.class);
 
-        UserCart cart = restTemplate.getForObject("http://localhost:8084/cart/" + userId, UserCart.class);
+        UserCart cart = restTemplate.getForObject("http://store-cart-service/cart/" + userId, UserCart.class);
+
+        UserComment userComment = restTemplate.getForObject("http://store-comment-service/comments/" + userId, UserComment.class);
+
 
         user.setCartList(cart);
         user.setUserRating(ratings);
+        user.setUserComment(userComment);
 
         return user;
     }
