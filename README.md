@@ -3,8 +3,8 @@
 
 ## store-information-service: https://github.com/Alishergit/store-information-service.git
 ## store-rating-service:
-## store-profile-service:
-## store-cart-service:
+## store-profile-service: https://github.com/vmiinv/profile.git
+## store-cart-service: https://github.com/vmiinv/cart.git
 ## store-comments-service: 
 
 
